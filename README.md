@@ -2,9 +2,13 @@
 
 This library implements a thin wrapper around the [Chef server API](https://docs.chef.io/api_chef_server.html) using only PyCrypto functionsfor RSA signing.
 
+## Installation
+We're on pypi:
+```
+pip install chef_gae
+```
 ## Usage/Samples
 See code examples below.
-
 
 You can find a list of endpoints on the [Chef server API](https://docs.chef.io/api_chef_server.html) docs.
 
