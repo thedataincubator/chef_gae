@@ -2,6 +2,6 @@ language: python
 python:
   - "2.7" # this is just for GAE, after all
 
-install: "pip install -r tests/requirements.txt; pip install pycrypto==2.6.1, pip install requests==2.1.0"
+install: "pip install -r chef_gae/tests/requirements.txt; pip install pycrypto==2.6.1, pip install requests==2.1.0"
 # command to run tests
 script: py.test
