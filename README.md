@@ -77,3 +77,7 @@ client = Chef(server_url=chef_server_url,
               org_name=your_org_name)
 access_list = client.get_endpoint('GET', '/nodes/hello/_acl')
 ```
+
+## Testing
+
+To run tests, install the packages in `tests/requirements.txt`. Then you can simply run `py.test`.
