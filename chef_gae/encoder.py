@@ -11,7 +11,7 @@ cf. Chef API spec at https://docs.chef.io/api_chef_server.html
 """
 
 
-def encode_headers(key, user_id, method, path, body=""):
+def encode_headers(server_url, key, user_id, method, path, body=""):
 
     hashed_path = b64encode(SHA1Hash(path).digest())
     hashed_body = b64encode(SHA1Hash(body).digest())
@@ -31,7 +31,7 @@ def encode_headers(key, user_id, method, path, body=""):
         "X-Ops-Sign": "version=1.0",
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "Host": "chef.thedataincubator.com:443",
+        "Host": server_url.split("https://")[1] + ":443",
         "X-Ops-Timestamp": canonical["X-Ops-Timestamp"],
         "X-Ops-Content-Hash": canonical["X-Ops-Content-Hash"],
         "X-Ops-Userid":  canonical["X-Ops-UserId"],

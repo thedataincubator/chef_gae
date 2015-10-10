@@ -54,7 +54,8 @@ class Chef(object):
         else:
             data_str = json.dumps(data)
 
-        headers = encode_headers(self.rsa_key,
+        headers = encode_headers(self.server_url,
+                                 self.rsa_key,
                                  self.chef_username,
                                  method,
                                  final_endpoint,
