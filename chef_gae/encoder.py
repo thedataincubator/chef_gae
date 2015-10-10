@@ -61,10 +61,10 @@ def _add_sig_to_headers(headers, signature):
 
 
 def _encode_message(canonical):
-    dude = "\n".join(["{}:{}".format(k, v) for k, v in canonical.iteritems()])
-    return dude
+    encoded = "\n".join(["{}:{}".format(k, v) for k, v in canonical.iteritems()])
+    return encoded
 
 
 def _emsa_pkcs1_v1_5_encode(m, em_len):
-    ps = '\xff' * (em_len - len(m) - 3)
-    return '\x00\x01' + ps + '\x00' + m
+    padded_s = '\xff' * (em_len - len(m) - 3)
+    return '\x00\x01' + padded_s + '\x00' + m
