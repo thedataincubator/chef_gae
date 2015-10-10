@@ -1,1 +1,1 @@
-from .chef import Chef
+from .chef import Chef  # noqa

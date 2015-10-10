@@ -61,8 +61,8 @@ def _add_sig_to_headers(headers, signature):
 
 
 def _encode_message(canonical):
-    encoded = "\n".join(["{}:{}".format(k, v) for k, v in canonical.iteritems()])
-    return encoded
+    encd = "\n".join(["{}:{}".format(k, v) for k, v in canonical.iteritems()])
+    return encd
 
 
 def _emsa_pkcs1_v1_5_encode(m, em_len):
