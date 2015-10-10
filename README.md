@@ -1,6 +1,6 @@
 # GAE-friendly Chef API Client
 
-This library implements a thin wrapper around the [Chef server API](https://docs.chef.io/api_chef_server.html) using only PyCrypto functionsfor RSA signing.
+This library implements a thin wrapper around the [Chef server API](https://docs.chef.io/api_chef_server.html) using only PyCrypto functions for RSA signing.
 
 ## Installation
 We're on pypi:
@@ -17,7 +17,10 @@ You can find a list of endpoints on the [Chef server API](https://docs.chef.io/a
 from gae_chef import Chef
 
 rsa_key = open('chef_client_key.pem').read()
-client = Chef(server_url=chef_server_url, rsa_key=rsa_key, chef_username=chef_username, org_name=your_org_name)
+client = Chef(server_url=chef_server_url,
+              rsa_key=rsa_key,
+              chef_username=chef_username,
+              org_name=your_org_name)
 
 #create a node
 nodes = client.get_endpoint('GET', '/nodes')
@@ -32,7 +35,10 @@ for node in nodes:
 from gae_chef import Chef
 
 rsa_key = open('chef_client_key.pem').read()
-client = Chef(server_url=chef_server_url, rsa_key=rsa_key, chef_username=chef_username, org_name=your_org_name)
+client = Chef(server_url=chef_server_url,
+              rsa_key=rsa_key,
+              chef_username=chef_username,
+              org_name=your_org_name)
 
 #data arg is a JSON-serialiazble dictionary
 node_data = {'name': 'hello'}
@@ -46,7 +52,10 @@ WARNING: The Chef Server API is finicky about accepting updates. If you're plann
 from gae_chef import Chef
 
 rsa_key = open('chef_client_key.pem').read()
-client = Chef(server_url=chef_server_url, rsa_key=rsa_key, chef_username=chef_username, org_name=your_org_name)
+client = Chef(server_url=chef_server_url,
+              rsa_key=rsa_key,
+              chef_username=chef_username,
+              org_name=your_org_name)
 
 #get node first
 node = client.get_endpoint('GET', '/nodes/hello')
@@ -62,6 +71,9 @@ You can also hit undocumented endpoints, like the ones surrounding access contro
 from gae_chef import Chef
 rsa_key = open('chef_client_key.pem').read()
 
-client = Chef(server_url=chef_server_url, rsa_key=rsa_key, chef_username=chef_username, org_name=your_org_name)
+client = Chef(server_url=chef_server_url,
+              rsa_key=rsa_key,
+              chef_username=chef_username,
+              org_name=your_org_name)
 access_list = client.get_endpoint('GET', '/nodes/hello/_acl')
 ```
