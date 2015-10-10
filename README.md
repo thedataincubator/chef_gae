@@ -1,4 +1,5 @@
 # GAE-friendly Chef API Client
+![Build Status](https://travis-ci.org/thedataincubator/chef_gae.svg)
 
 This library implements a thin wrapper around the [Chef server API](https://docs.chef.io/api_chef_server.html) using only PyCrypto functions for RSA signing.
 
