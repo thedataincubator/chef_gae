@@ -3,6 +3,10 @@
 
 This library implements a thin wrapper around the [Chef server API](https://docs.chef.io/api_chef_server.html) using only PyCrypto functions for RSA signing.
 
+## Warning: Unmaintained package
+
+This project is no longer maintained.  It is known that at least one dependency (`pycrypto == 2.6.1`) has a security vulnerability. Use at your own risk!
+
 ## Installation
 We're on pypi:
 ```
@@ -13,7 +17,7 @@ See code examples below.
 
 You can find a list of endpoints on the [Chef server API](https://docs.chef.io/api_chef_server.html) docs.
 
-###Get all nodes
+### Get all nodes
 ```python
 from gae_chef import Chef
 
@@ -31,7 +35,7 @@ for node in nodes:
     print node['name']
 ```
 
-###Create a Node
+### Create a Node
 ```python
 from gae_chef import Chef
 
@@ -47,7 +51,7 @@ new_node = client.get_endpoint('POST', '/nodes', data=node_data)
 print new_node['uri']
 ```
 
-###Update a node
+### Update a node
 WARNING: The Chef Server API is finicky about accepting updates. If you're planning to PUT data (eg updating a node), you'll probably want to GET the current status, then PUT the resulting object back. Example below:
 ```python
 from gae_chef import Chef
