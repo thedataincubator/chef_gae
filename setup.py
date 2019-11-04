@@ -18,4 +18,4 @@ setup(
         "Programming Language :: Python :: 2.7"],
     keywords='google appengine pycrypto chef server devops',
     packages=find_packages(),
-    install_requires=['pycrypto==2.6.1', 'requests==2.1.0'])
+    install_requires=['pycrypto==2.6.1', 'requests==2.20.0'])
